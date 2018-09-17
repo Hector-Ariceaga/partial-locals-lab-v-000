@@ -1,5 +1,5 @@
 <%= form_tag(students_path method: :get) do %>
-  <%= text_field_tag :search, params[student][search] %>
+  <%= text_field_tag :search, params[student][:search] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
