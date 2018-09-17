@@ -16,7 +16,10 @@ class Student < ActiveRecord::Base
 
   def self.search(name)
     if name
-      Student.all.select {|student| student.name.downcase.include?(name)}
+      student = Student.find_by(name: name)
+      if student
+        self.where(student_id: student)
+      end
     else
       Student.all
     end
